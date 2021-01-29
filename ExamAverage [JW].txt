@@ -1,0 +1,11 @@
+Function Main
+    Declare Integer exam1, exam2, average
+    Declare String username
+    
+    Input username
+    Input exam1
+    Input exam2
+    Assign average = (exam1+exam2)/2
+    Output "Student: " & username
+    Output "Exam Average: " & average
+End

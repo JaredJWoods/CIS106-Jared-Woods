@@ -1,0 +1,8 @@
+Function Main
+    Declare Integer gallons, miles, mpg
+    
+    Input gallons
+    Input miles
+    Assign mpg = miles/gallons
+    Output "MPG: " & mpg
+End

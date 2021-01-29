@@ -1,0 +1,13 @@
+Function Main
+    Declare Integer num1, num2
+    Declare Integer sum, product, difference
+    
+    Input num1
+    Input num2
+    Assign sum = num1+num2
+    Output "You added and got " & sum & "."
+    Assign product = num1*num2
+    Output "You multiplied and ended up with " & product & "."
+    Assign difference = num1-num2
+    Output "You subtracted and had " & difference & " left."
+End
