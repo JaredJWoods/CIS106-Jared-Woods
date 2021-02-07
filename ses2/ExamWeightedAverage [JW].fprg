@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="jaredwoods"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-02-06 10:00:21 PM"/>
+        <attribute name="created" value="amFyZWR3b29kcztKQVJFRFdPT0RTNkFCMTsyMDIxLTAyLTA2OzA5OjE4OjIxIFBNOzMzNDA="/>
+        <attribute name="edited" value="amFyZWR3b29kcztKQVJFRFdPT0RTNkFCMTsyMDIxLTAyLTA2OzEwOjAwOjIxIFBNOzM7MzQzMw=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="exam1" type="Real" array="False" size=""/>
+            <declare name="exam2" type="Real" array="False" size=""/>
+            <declare name="exam1w" type="Real" array="False" size=""/>
+            <declare name="exam2w" type="Real" array="False" size=""/>
+            <input variable="exam1"/>
+            <input variable="exam2"/>
+            <assign variable="exam1w" expression="exam1*.6"/>
+            <assign variable="exam2w" expression="exam2*.4"/>
+            <declare name="Grade" type="Real" array="False" size=""/>
+            <assign variable="Grade" expression="(exam1w + exam2w)"/>
+            <output expression="&quot;Exam 1 counts for 60% of your grade.  You scored: &quot; &amp; exam1 &amp; &quot;%.&quot;" newline="True"/>
+            <output expression="&quot;Exam 2 counts for 40% of your grade.  You scored: &quot; &amp; exam2 &amp; &quot;%.&quot;" newline="True"/>
+            <output expression="&quot;Your final grade is: &quot; &amp; Grade &amp; &quot;%&quot;" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
