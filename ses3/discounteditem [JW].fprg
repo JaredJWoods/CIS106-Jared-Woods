@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="jaredwoods"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-02-06 11:03:12 PM"/>
+        <attribute name="created" value="amFyZWR3b29kcztKQVJFRFdPT0RTNkFCMTsyMDIxLTAyLTA2OzEwOjQxOjU3IFBNOzMzMzc="/>
+        <attribute name="edited" value="amFyZWR3b29kcztKQVJFRFdPT0RTNkFCMTsyMDIxLTAyLTA2OzExOjAzOjEyIFBNOzE7MzQzNQ=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="amount, price, subtotal, discount, total" type="Real" array="False" size=""/>
+            <output expression="&quot;How much is the item you are purchasing?&quot;" newline="True"/>
+            <input variable="price"/>
+            <output expression="&quot;Your item is: $&quot; &amp; price &amp; &quot;.&quot;" newline="True"/>
+            <output expression="&quot;How many would you like to purchase?&quot;" newline="True"/>
+            <input variable="amount"/>
+            <assign variable="subtotal" expression="amount*price"/>
+            <output expression="&quot;That amount comes to: $&quot; &amp; subtotal &amp; &quot;.&quot;" newline="True"/>
+            <assign variable="discount" expression="subtotal*0.15"/>
+            <output expression="&quot;Your item is on sale for 15% off.  This saves you: $&quot; &amp; discount &amp; &quot;.&quot;" newline="True"/>
+            <assign variable="total" expression="subtotal-discount"/>
+            <output expression="&quot;This brings your new total to: $&quot; &amp; total &amp; &quot;.&quot;" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
