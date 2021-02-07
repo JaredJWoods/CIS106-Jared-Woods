@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="jaredwoods"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-02-06 10:23:46 PM"/>
+        <attribute name="created" value="amFyZWR3b29kcztKQVJFRFdPT0RTNkFCMTsyMDIxLTAyLTA2OzEwOjEyOjUyIFBNOzMzMzA="/>
+        <attribute name="edited" value="amFyZWR3b29kcztKQVJFRFdPT0RTNkFCMTsyMDIxLTAyLTA2OzEwOjIzOjQ2IFBNOzI7MzQ0NA=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <output expression="&quot;Enter how many shares you own: &quot;" newline="True"/>
+            <declare name="CISQ, price, value" type="Integer" array="False" size=""/>
+            <input variable="CISQ"/>
+            <output expression="&quot;You own &quot; &amp; CISQ &amp; &quot; shares.&quot; &amp; &#13;&#10;&quot;Enter the market value for CISQ: $&quot;" newline="True"/>
+            <input variable="price"/>
+            <assign variable="value" expression="CISQ * price"/>
+            <output expression="&quot;Your portfolio of CISQ is worth: $&quot; &amp; value &amp; &quot;.&quot;" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
