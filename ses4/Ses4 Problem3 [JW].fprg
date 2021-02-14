@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="jaredwoods"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-02-13 07:37:58 PM"/>
+        <attribute name="created" value="amFyZWR3b29kcztKQVJFRFdPT0RTNkFCMTsyMDIxLTAyLTEzOzA2OjUyOjE4IFBNOzMzMzk="/>
+        <attribute name="edited" value="amFyZWR3b29kcztKQVJFRFdPT0RTNkFCMTsyMDIxLTAyLTEzOzA3OjM3OjU4IFBNOzU7MzQ1OQ=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="c, q, t, b, s" type="Real" array="False" size=""/>
+            <output expression="&quot;Free shipping on purchases of $50 or more.&quot;" newline="True"/>
+            <output expression="&quot;Type the cost of the book and press [ENTER].&quot;" newline="True"/>
+            <input variable="c"/>
+            <output expression="&quot;You entered: $&quot; &amp; c" newline="True"/>
+            <output expression="&quot;Type the quantity of books to order: &quot;" newline="True"/>
+            <input variable="q"/>
+            <output expression="&quot;You entered: &quot; &amp; q &amp; &quot;.&quot;" newline="True"/>
+            <assign variable="t" expression="q*c"/>
+            <if expression="t&gt;50">
+                <then>
+                    <output expression="&quot;You qualify for free shipping!&quot;" newline="True"/>
+                    <assign variable="s" expression="0"/>
+                </then>
+                <else>
+                    <output expression="&quot;There is a $25 shipping fee.&quot;" newline="True"/>
+                    <assign variable="s" expression="25"/>
+                </else>
+            </if>
+            <output expression="&quot;The total price of books: $&quot; &amp; t" newline="True"/>
+            <output expression="&quot;Shipping: $&quot; &amp; s" newline="True"/>
+            <assign variable="b" expression="t+s"/>
+            <output expression="&quot;Total amount due: $&quot; &amp; b" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
