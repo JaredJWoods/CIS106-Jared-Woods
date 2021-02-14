@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="jaredwoods"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-02-13 06:40:30 PM"/>
+        <attribute name="created" value="amFyZWR3b29kcztKQVJFRFdPT0RTNkFCMTsyMDIxLTAyLTEzOzA1OjQ1OjI0IFBNOzMzMzc="/>
+        <attribute name="edited" value="amFyZWR3b29kcztKQVJFRFdPT0RTNkFCMTsyMDIxLTAyLTEzOzA2OjQwOjMwIFBNOzE7MzQzOA=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="q, u, pE" type="Integer" array="False" size=""/>
+            <declare name="item" type="Integer" array="False" size=""/>
+            <output expression="&quot;Press 1 to select Item A&quot;" newline="True"/>
+            <output expression="&quot;Press 2 to select Item B&quot;" newline="True"/>
+            <input variable="item"/>
+            <if expression="item == 1">
+                <then>
+                    <output expression="&quot;You selected: Item A&quot;" newline="True"/>
+                    <output expression="&quot;Unit cost is: $10.00&quot;" newline="True"/>
+                    <assign variable="u" expression="10"/>
+                </then>
+                <else>
+                    <if expression="item == 2">
+                        <then>
+                            <output expression="&quot;You selected: Item B&quot;" newline="True"/>
+                            <output expression="&quot;Unit cost is: $5.00&quot;" newline="True"/>
+                            <assign variable="u" expression="5"/>
+                        </then>
+                        <else>
+                            <output expression="&quot;You're selection is Invalid&quot;" newline="True"/>
+                            <assign variable="u" expression="0"/>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <output expression="&quot;How many units would you like to purchase?&quot;" newline="True"/>
+            <input variable="q"/>
+            <assign variable="pE" expression="q*u"/>
+            <output expression="&quot;The price for &quot; &amp; q &amp; &quot; units is: $&quot; &amp; pE" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

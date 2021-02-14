@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="jaredwoods"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-02-13 05:45:17 PM"/>
+        <attribute name="created" value="amFyZWR3b29kcztKQVJFRFdPT0RTNkFCMTsyMDIxLTAyLTEzOzAyOjQ2OjE3IFBNOzMzMzc="/>
+        <attribute name="edited" value="amFyZWR3b29kcztKQVJFRFdPT0RTNkFCMTsyMDIxLTAyLTEzOzA1OjQ1OjE3IFBNOzU7MzQ1MQ=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="q, pE, Tax, Total" type="Real" array="False" size=""/>
+            <output expression="&quot;Enter quantity of item:&quot;" newline="True"/>
+            <input variable="q"/>
+            <output expression="&quot;You entered: &quot; &amp; q" newline="True"/>
+            <if expression="q &gt;= 1000">
+                <then>
+                    <output expression="&quot;Unit price is: $3.00&quot;" newline="True"/>
+                    <assign variable="pE" expression="q*3"/>
+                </then>
+                <else>
+                    <output expression="&quot;Unit price is: $5.00&quot;" newline="True"/>
+                    <assign variable="pE" expression="q*5"/>
+                </else>
+            </if>
+            <output expression="&quot;Extended Price: $&quot; &amp; pE" newline="True"/>
+            <assign variable="Tax" expression="pE*.07"/>
+            <output expression="&quot;Tax: $&quot; &amp; Tax" newline="True"/>
+            <assign variable="Total" expression="pE + Tax"/>
+            <output expression="&quot;Total: $&quot; &amp; Total" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
