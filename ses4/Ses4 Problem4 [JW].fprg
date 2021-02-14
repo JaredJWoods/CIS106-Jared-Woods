@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="jaredwoods"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-02-13 07:58:13 PM"/>
+        <attribute name="created" value="amFyZWR3b29kcztKQVJFRFdPT0RTNkFCMTsyMDIxLTAyLTEzOzA3OjM5OjIyIFBNOzMzNDA="/>
+        <attribute name="edited" value="amFyZWR3b29kcztKQVJFRFdPT0RTNkFCMTsyMDIxLTAyLTEzOzA3OjU4OjEzIFBNOzI7MzQ1MA=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="a" type="String" array="False" size=""/>
+            <declare name="c, w, t" type="Real" array="False" size=""/>
+            <output expression="&quot;Enter the name of your appliance:&quot;" newline="True"/>
+            <input variable="a"/>
+            <output expression="&quot;You entered:&quot; &amp; a" newline="True"/>
+            <output expression="&quot;Enter the cost of the appliance: $&quot;" newline="True"/>
+            <input variable="c"/>
+            <output expression="&quot;APPLIANCE:&quot; &amp; a" newline="True"/>
+            <output expression="&quot;COST: $&quot; &amp; c" newline="True"/>
+            <if expression="c&gt;1000">
+                <then>
+                    <assign variable="w" expression="c*0.10"/>
+                </then>
+                <else>
+                    <assign variable="w" expression="c*0.05"/>
+                </else>
+            </if>
+            <output expression="&quot;Warrantee cost: $&quot; &amp; w" newline="True"/>
+            <assign variable="t" expression="c+w"/>
+            <output expression="&quot;Total with Warrantee: $&quot; &amp; t" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
