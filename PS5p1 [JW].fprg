@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="jaredwoods"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-02-20 10:23:15 AM"/>
+        <attribute name="created" value="amFyZWR3b29kcztKQVJFRFdPT0RTNkFCMTsyMDIxLTAyLTIwOzA5OjM2OjI3IEFNOzMzMjc="/>
+        <attribute name="edited" value="amFyZWR3b29kcztKQVJFRFdPT0RTNkFCMTsyMDIxLTAyLTIwOzEwOjIzOjE1IEFNOzI7MzQyMQ=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="qty, extprice" type="Integer" array="False" size=""/>
+            <declare name="tax, total" type="Real" array="False" size=""/>
+            <output expression="&quot;ENTER WIDGIT QUANTITY:&quot;" newline="True"/>
+            <input variable="qty"/>
+            <if expression="qty &gt; 10000">
+                <then>
+                    <assign variable="extprice" expression="qty*10"/>
+                </then>
+                <else>
+                    <if expression="qty &gt;= 5000 and qty &lt;= 10000">
+                        <then>
+                            <assign variable="extprice" expression="qty*20"/>
+                        </then>
+                        <else>
+                            <assign variable="extprice" expression="qty*30"/>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <assign variable="tax" expression="extprice*.07"/>
+            <assign variable="total" expression="extprice + tax"/>
+            <output expression="extprice" newline="True"/>
+            <output expression="tax" newline="True"/>
+            <output expression="total" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

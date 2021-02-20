@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="jaredwoods"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-02-20 04:56:49 PM"/>
+        <attribute name="created" value="amFyZWR3b29kcztKQVJFRFdPT0RTNkFCMTsyMDIxLTAyLTIwOzA0OjI3OjU5IFBNOzMzNDI="/>
+        <attribute name="edited" value="amFyZWR3b29kcztKQVJFRFdPT0RTNkFCMTsyMDIxLTAyLTIwOzA0OjU2OjQ5IFBNOzQ7MzQ1NA=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="principle, years, rate, interest" type="Real" array="False" size=""/>
+            <input variable="principle"/>
+            <input variable="years"/>
+            <if expression="principle &gt; 100000.00 and years == 5">
+                <then>
+                    <assign variable="rate" expression=".06"/>
+                </then>
+                <else>
+                    <if expression="principle &gt;= 50000.00 and years == 10">
+                        <then>
+                            <assign variable="rate" expression=".05"/>
+                        </then>
+                        <else>
+                            <if expression="principle &gt;= 50000.00 and years == 5">
+                                <then>
+                                    <assign variable="rate" expression=".04"/>
+                                </then>
+                                <else>
+                                    <assign variable="rate" expression=".02"/>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <assign variable="interest" expression="principle*rate"/>
+            <output expression="principle" newline="True"/>
+            <output expression="rate" newline="True"/>
+            <output expression="interest" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
