@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="jaredwoods"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-02-28 09:46:49 PM"/>
+        <attribute name="created" value="amFyZWR3b29kcztKQVJFRFdPT0RTNkFCMTsyMDIxLTAyLTI4OzA5OjM3OjEwIFBNOzMzNDM="/>
+        <attribute name="edited" value="amFyZWR3b29kcztKQVJFRFdPT0RTNkFCMTsyMDIxLTAyLTI4OzA5OjQ2OjQ5IFBNOzM7MzQ2NQ=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="name, code" type="String" array="False" size=""/>
+            <declare name="hours, tuition" type="Integer" array="False" size=""/>
+            <input variable="name"/>
+            <input variable="code"/>
+            <input variable="hours"/>
+            <call expression="tuitionOwed(code, hours)"/>
+            <assign variable="tuition" expression="tuitionOwed(code, hours)"/>
+            <output expression="&quot;STUDENT NAME: &quot;&amp;name" newline="True"/>
+            <output expression="&quot;Tuition: $&quot;&amp;tuition&amp;&quot;.00&quot;" newline="True"/>
+        </body>
+    </function>
+    <function name="tuitionOwed" type="Real" variable="tuition">
+        <parameters>
+            <parameter name="code" type="String" array="False"/>
+            <parameter name="hours" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="tuition" type="Real" array="False" size=""/>
+            <if expression="code == &quot;I&quot;">
+                <then>
+                    <assign variable="tuition" expression="250*hours"/>
+                </then>
+                <else>
+                    <if expression="code == &quot;O&quot;">
+                        <then>
+                            <assign variable="tuition" expression="550*hours"/>
+                        </then>
+                        <else/>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

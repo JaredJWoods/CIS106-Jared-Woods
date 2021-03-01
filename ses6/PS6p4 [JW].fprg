@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="jaredwoods"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-02-28 09:37:05 PM"/>
+        <attribute name="created" value="amFyZWR3b29kcztKQVJFRFdPT0RTNkFCMTsyMDIxLTAyLTI4OzA4OjM4OjMxIFBNOzMzNDY="/>
+        <attribute name="edited" value="amFyZWR3b29kcztKQVJFRFdPT0RTNkFCMTsyMDIxLTAyLTI4OzA5OjM3OjA1IFBNOzc7MzQ2MQ=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="name, job" type="String" array="False" size=""/>
+            <declare name="hours, rate, pay" type="Real" array="False" size=""/>
+            <input variable="name"/>
+            <input variable="job"/>
+            <input variable="hours"/>
+            <call expression="payRate(job)"/>
+            <assign variable="rate" expression="payRate(job)"/>
+            <call expression="grossPay(hours, rate)"/>
+            <assign variable="pay" expression="grossPay(hours, rate)"/>
+            <output expression="&quot;NAME: &quot;&amp;name" newline="True"/>
+            <output expression="&quot;JOB CODE: &quot;&amp;job" newline="True"/>
+            <output expression="&quot;TIME WORKED: &quot;&amp;hours&amp;&quot;hours&quot;" newline="True"/>
+            <output expression="&quot;PAY RATE: $&quot;&amp;rate&amp;&quot;/hour&quot;" newline="True"/>
+            <output expression="&quot;GROSS PAY: $&quot;&amp;pay" newline="True"/>
+        </body>
+    </function>
+    <function name="grossPay" type="Real" variable="pay">
+        <parameters>
+            <parameter name="hours" type="Integer" array="False"/>
+            <parameter name="rate" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="pay, OT, base, OTpay" type="Real" array="False" size=""/>
+            <if expression="hours &gt;= 40">
+                <then>
+                    <assign variable="OT" expression="hours - 40"/>
+                    <assign variable="base" expression="40*rate"/>
+                    <assign variable="OTpay" expression="OT*rate*1.5"/>
+                    <assign variable="pay" expression="OTpay+base"/>
+                </then>
+                <else>
+                    <assign variable="pay" expression="hours*rate"/>
+                </else>
+            </if>
+        </body>
+    </function>
+    <function name="payRate" type="Integer" variable="rate">
+        <parameters>
+            <parameter name="job" type="String" array="False"/>
+        </parameters>
+        <body>
+            <declare name="rate" type="Integer" array="False" size=""/>
+            <if expression="job == &quot;L&quot;">
+                <then>
+                    <assign variable="rate" expression="25"/>
+                </then>
+                <else>
+                    <if expression="job == &quot;A&quot;">
+                        <then>
+                            <assign variable="rate" expression="30"/>
+                        </then>
+                        <else>
+                            <if expression="job == &quot;J&quot;">
+                                <then>
+                                    <assign variable="rate" expression="50"/>
+                                </then>
+                                <else>
+                                    <output expression="&quot;ERROR&quot;" newline="True"/>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

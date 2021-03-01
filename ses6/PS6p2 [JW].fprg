@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="jaredwoods"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-02-28 08:09:30 PM"/>
+        <attribute name="created" value="amFyZWR3b29kcztKQVJFRFdPT0RTNkFCMTsyMDIxLTAyLTI4OzA3OjUzOjUwIFBNOzMzNDM="/>
+        <attribute name="edited" value="amFyZWR3b29kcztKQVJFRFdPT0RTNkFCMTsyMDIxLTAyLTI4OzA4OjA5OjMwIFBNOzQ7MzQ1NA=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="lastName" type="String" array="False" size=""/>
+            <declare name="hits" type="Integer" array="False" size=""/>
+            <declare name="atBats" type="Integer" array="False" size=""/>
+            <declare name="average" type="Real" array="False" size=""/>
+            <output expression="&quot;Enter Last Name: &quot;" newline="True"/>
+            <input variable="lastName"/>
+            <output expression="&quot;Enter Hits: &quot;" newline="True"/>
+            <input variable="hits"/>
+            <output expression="&quot;Enter At Bats: &quot;" newline="True"/>
+            <input variable="atBats"/>
+            <call expression="battingAverage(hits, atBats)"/>
+            <assign variable="average" expression="battingAverage(hits, atBats)"/>
+            <output expression="&quot;Name: &quot;" newline="True"/>
+            <output expression="lastName" newline="True"/>
+            <output expression="&quot;Batting average: &quot;" newline="True"/>
+            <output expression="average" newline="True"/>
+        </body>
+    </function>
+    <function name="battingAverage" type="Real" variable="average">
+        <parameters>
+            <parameter name="hits" type="Integer" array="False"/>
+            <parameter name="atBats" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="average" type="Real" array="False" size=""/>
+            <assign variable="average" expression="hits/atBats"/>
+        </body>
+    </function>
+</flowgorithm>
