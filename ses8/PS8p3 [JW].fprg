@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="jaredwoods"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-03-14 04:27:19 PM"/>
+        <attribute name="created" value="amFyZWR3b29kcztKQVJFRFdPT0RTNkFCMTsyMDIxLTAzLTE0OzAyOjQ2OjM3IFBNOzMzNDE="/>
+        <attribute name="edited" value="amFyZWR3b29kcztKQVJFRFdPT0RTNkFCMTsyMDIxLTAzLTE0OzA0OjI3OjE5IFBNOzU7MzQ1NA=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="choice" type="String" array="False" size=""/>
+            <output expression="&quot;Please type 'yes' if you would like to check your exam average.&quot;" newline="True"/>
+            <output expression="&quot;Otherwise type: 'no'.&quot;" newline="True"/>
+            <input variable="choice"/>
+            <while expression="choice == &quot;yes&quot;">
+                <output expression="&quot;You entered YES!&quot;" newline="True"/>
+                <declare name="name" type="String" array="False" size=""/>
+                <declare name="exam1, exam2" type="Real" array="False" size=""/>
+                <declare name="examAverage" type="Integer" array="False" size=""/>
+                <output expression="&quot;Enter your last name: &quot;" newline="True"/>
+                <input variable="name"/>
+                <output expression="&quot;You entered: &quot; &amp; name" newline="True"/>
+                <output expression="&quot;Enter your score for the first exam: &quot;" newline="True"/>
+                <input variable="exam1"/>
+                <output expression="&quot;Enter your score for the first exam: &quot;" newline="True"/>
+                <input variable="exam2"/>
+                <call expression="examAverage(exam1, exam2)"/>
+                <assign variable="examAverage" expression="examAverage(exam1, exam2)"/>
+                <output expression="&quot;Your average nscore is: &quot; &amp; examAverage &amp; &quot;%&quot;" newline="True"/>
+                <output expression="&quot;Would you like to check your score average again?&quot;" newline="True"/>
+                <output expression="&quot;Enter 'yes' or 'no': &quot;" newline="True"/>
+                <input variable="choice"/>
+            </while>
+            <output expression="&quot;Thank you for using our program.&quot;" newline="True"/>
+        </body>
+    </function>
+    <function name="examAverage" type="Integer" variable="examAverage">
+        <parameters>
+            <parameter name="exam1" type="Real" array="False"/>
+            <parameter name="exam2" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <declare name="examAverage" type="Integer" array="False" size=""/>
+            <assign variable="examAverage" expression="(exam1 + exam2)/2"/>
+        </body>
+    </function>
+</flowgorithm>

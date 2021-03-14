@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="jaredwoods"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-03-14 02:09:54 PM"/>
+        <attribute name="created" value="amFyZWR3b29kcztKQVJFRFdPT0RTNkFCMTsyMDIxLTAzLTE0OzAxOjM0OjE0IFBNOzMzMzI="/>
+        <attribute name="edited" value="amFyZWR3b29kcztKQVJFRFdPT0RTNkFCMTsyMDIxLTAzLTE0OzAyOjA5OjU0IFBNOzM7MzQ0OQ=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="start, stop, increment" type="Integer" array="False" size=""/>
+            <assign variable="start" expression="1"/>
+            <assign variable="stop" expression="25"/>
+            <assign variable="increment" expression="2"/>
+            <output expression="&quot;While loop counting &quot; &amp; start &amp; &quot; to &quot; &amp; stop &amp; &quot; by &quot; &amp; increment &amp; &quot;.&quot;" newline="True"/>
+            <declare name="count" type="Integer" array="False" size=""/>
+            <assign variable="count" expression="start"/>
+            <while expression="count &lt;= stop">
+                <output expression="count" newline="True"/>
+                <assign variable="count" expression="count + increment"/>
+            </while>
+        </body>
+    </function>
+</flowgorithm>
