@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="jaredwoods"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-03-14 09:40:14 PM"/>
+        <attribute name="created" value="amFyZWR3b29kcztKQVJFRFdPT0RTNkFCMTsyMDIxLTAzLTE0OzA4OjUxOjQzIFBNOzMzNDA="/>
+        <attribute name="edited" value="amFyZWR3b29kcztKQVJFRFdPT0RTNkFCMTsyMDIxLTAzLTE0OzA5OjQwOjE0IFBNOzM7MzQ0Nw=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="gross, rate, taxOwed" type="Real" array="False" size=""/>
+            <declare name="choice" type="String" array="False" size=""/>
+            <output expression="&quot;Do you want to compute income tax, yes or no?&quot;" newline="True"/>
+            <input variable="choice"/>
+            <if expression="choice == &quot;yes&quot;">
+                <then>
+                    <output expression="&quot;Enter your gross income: $&quot;" newline="True"/>
+                    <input variable="gross"/>
+                    <output expression="&quot;Your gross income is: $&quot;" newline="True"/>
+                    <if expression="gross &gt;= 500001">
+                        <then>
+                            <assign variable="rate" expression=".30"/>
+                            <output expression="&quot;You are in the highest bracket with a 30% federal income tax rate.&quot;" newline="True"/>
+                        </then>
+                        <else>
+                            <if expression="gross &gt;= 200000 and gross &lt;= 500000">
+                                <then>
+                                    <assign variable="rate" expression=".20"/>
+                                    <output expression="&quot;You are in the middle bracket with a 20% federal income tax rate.&quot;" newline="True"/>
+                                </then>
+                                <else>
+                                    <assign variable="rate" expression=".15"/>
+                                    <output expression="&quot;You are in the lowest bracket with a 15% federal income tax rate.&quot;" newline="True"/>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                    <assign variable="taxOwed" expression="gross * rate"/>
+                    <output expression="&quot;The tax you owe to the federal government is $&quot; &amp; taxOwed" newline="True"/>
+                    <output expression="&quot;Do you want to calculate your federal income tax again?&quot;" newline="True"/>
+                    <input variable="choice"/>
+                </then>
+                <else/>
+            </if>
+            <output expression="&quot;That's ok you do not have to.&quot;" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

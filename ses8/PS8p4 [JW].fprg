@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="jaredwoods"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-03-14 08:50:50 PM"/>
+        <attribute name="created" value="amFyZWR3b29kcztKQVJFRFdPT0RTNkFCMTsyMDIxLTAzLTE0OzA0OjQ5OjU0IFBNOzMzNDU="/>
+        <attribute name="edited" value="amFyZWR3b29kcztKQVJFRFdPT0RTNkFCMTsyMDIxLTAzLTE0OzA4OjUwOjUwIFBNOzY7MzQ1MA=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="choice, item" type="String" array="False" size=""/>
+            <output expression="&quot;Want to do this?&quot;" newline="True"/>
+            <input variable="choice"/>
+            <while expression="choice = &quot;yes&quot;">
+                <declare name="price, quantity, extendedPrice, discount, rate, discountedPrice, tax, total" type="Real" array="False" size=""/>
+                <output expression="&quot;Item name: ?&quot;" newline="True"/>
+                <input variable="item"/>
+                <output expression="&quot;price: $&quot;" newline="True"/>
+                <input variable="price"/>
+                <output expression="&quot;quantity: ?&quot;" newline="True"/>
+                <input variable="quantity"/>
+                <call expression="extendedPrice(price, quantity)"/>
+                <assign variable="extendedPrice" expression="extendedPrice(price, quantity)"/>
+                <call expression="rate(extendedPrice)"/>
+                <assign variable="rate" expression="rate(extendedPrice)"/>
+                <call expression="discount(extendedPrice, rate)"/>
+                <assign variable="discount" expression="discount(extendedPrice, rate)"/>
+                <call expression="discountedPrice(extendedPrice, discount)"/>
+                <assign variable="discountedPrice" expression="discountedPrice(extendedPrice, discount)"/>
+                <assign variable="tax" expression="discountedPrice*.07"/>
+                <assign variable="total" expression="discountedPrice + tax"/>
+                <output expression="&quot;ITEM: &quot; &amp; item" newline="True"/>
+                <output expression="&quot;PRICE: $&quot; &amp; price" newline="True"/>
+                <output expression="&quot;QUANTITY: &quot; &amp; quantity" newline="True"/>
+                <output expression="&quot;Extended Price: $&quot; &amp; extendedPrice" newline="True"/>
+                <output expression="rate &amp; &quot;% Discount: $&quot; &amp; discount" newline="True"/>
+                <output expression="&quot;Discounted Price: $&quot; &amp; discountedPrice" newline="True"/>
+                <output expression="&quot;7% Tax: $&quot; &amp; tax" newline="True"/>
+                <output expression="&quot;Total: $&quot; &amp; total" newline="True"/>
+                <output expression="&quot;Want to play again?&quot;" newline="True"/>
+                <input variable="choice"/>
+            </while>
+            <output expression="&quot;Too Bad&quot;" newline="True"/>
+        </body>
+    </function>
+    <function name="discount" type="Real" variable="discount">
+        <parameters>
+            <parameter name="extendedPrice" type="Real" array="False"/>
+            <parameter name="rate" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="discount" type="Real" array="False" size=""/>
+            <assign variable="discount" expression="extendedprice*(rate/100)"/>
+        </body>
+    </function>
+    <function name="discountedPrice" type="Real" variable="discountedPrice">
+        <parameters>
+            <parameter name="extendedPrice" type="Real" array="False"/>
+            <parameter name="discount" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <declare name="discountedPrice" type="Real" array="False" size=""/>
+            <assign variable="discountedPrice" expression="extendedPrice - discount"/>
+        </body>
+    </function>
+    <function name="extendedPrice" type="Real" variable="extendedPrice">
+        <parameters>
+            <parameter name="price" type="Real" array="False"/>
+            <parameter name="quantity" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <declare name="extendedPrice" type="Real" array="False" size=""/>
+            <assign variable="extendedPrice" expression="price*quantity"/>
+        </body>
+    </function>
+    <function name="rate" type="Integer" variable="rate">
+        <parameters>
+            <parameter name="extendedPrice" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <declare name="rate" type="Integer" array="False" size=""/>
+            <if expression="extendedPrice &gt;= 10000.01">
+                <then>
+                    <assign variable="rate" expression="10"/>
+                </then>
+                <else>
+                    <if expression="extendedPrice &gt;= 5000.01">
+                        <then>
+                            <assign variable="rate" expression="5"/>
+                        </then>
+                        <else>
+                            <assign variable="rate" expression="2"/>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>
