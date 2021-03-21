@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="jared"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-03-19 04:47:18 PM"/>
+        <attribute name="created" value="amFyZWQ7REVTS1RPUC1SME43NjlGOzIwMjEtMDMtMTk7MDQ6NDA6NTAgUE07MjgyMA=="/>
+        <attribute name="edited" value="amFyZWQ7REVTS1RPUC1SME43NjlGOzIwMjEtMDMtMTk7MDQ6NDc6MTggUE07MjsyOTQw"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="no1, no2, no3, count" type="Integer" array="False" size=""/>
+            <assign variable="no1" expression="1"/>
+            <assign variable="no2" expression="1"/>
+            <assign variable="no3" expression="0"/>
+            <output expression="&quot;The Golden Ratio&quot;" newline="True"/>
+            <for variable="count" start="1" end="21" direction="inc" step="1">
+                <output expression="no2" newline="True"/>
+                <assign variable="no3" expression="no1 + no2"/>
+                <assign variable="no1" expression="no2"/>
+                <assign variable="no2" expression="no3"/>
+            </for>
+        </body>
+    </function>
+</flowgorithm>

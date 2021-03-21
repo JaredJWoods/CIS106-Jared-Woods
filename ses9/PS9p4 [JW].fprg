@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="jaredwoods"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-03-20 06:36:05 PM"/>
+        <attribute name="created" value="amFyZWR3b29kcztKQVJFRFdPT0RTNkFCMTsyMDIxLTAzLTIwOzAyOjMwOjE5IFBNOzMzMzE="/>
+        <attribute name="edited" value="amFyZWR3b29kcztKQVJFRFdPT0RTNkFCMTsyMDIxLTAzLTIwOzA2OjM2OjA1IFBNOzQ7MzQ0Nw=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="quantity, price, extendedPrice, totalEP, averageOrder" type="Real" array="False" size=""/>
+            <declare name="count" type="Integer" array="False" size=""/>
+            <assign variable="count" expression="0"/>
+            <assign variable="totalEP" expression="0"/>
+            <declare name="item" type="String" array="False" size=""/>
+            <input variable="item"/>
+            <while expression="item != &quot;&quot;">
+                <assign variable="count" expression="count + 1"/>
+                <output expression="item" newline="True"/>
+                <input variable="quantity"/>
+                <output expression="quantity" newline="True"/>
+                <input variable="price"/>
+                <output expression="price" newline="True"/>
+                <call expression="extendedPrice(price, quantity)"/>
+                <assign variable="extendedPrice" expression="extendedPrice(price, quantity)"/>
+                <output expression="extendedPrice" newline="True"/>
+                <assign variable="totalEP" expression="totalEP + extendedPrice"/>
+                <input variable="item"/>
+            </while>
+            <output expression="totalEP" newline="True"/>
+            <output expression="count" newline="True"/>
+            <assign variable="averageOrder" expression="totalEP / count"/>
+            <output expression="averageOrder" newline="True"/>
+        </body>
+    </function>
+    <function name="extendedPrice" type="Real" variable="extendedPrice">
+        <parameters>
+            <parameter name="quantity" type="Real" array="False"/>
+            <parameter name="price" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <declare name="extendedPrice" type="Real" array="False" size=""/>
+            <assign variable="extendedPrice" expression="quantity * price"/>
+        </body>
+    </function>
+</flowgorithm>

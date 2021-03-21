@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="jaredwoods"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-03-20 03:06:51 PM"/>
+        <attribute name="created" value="amFyZWR3b29kcztKQVJFRFdPT0RTNkFCMTsyMDIxLTAzLTIwOzAyOjMwOjE5IFBNOzMzMzE="/>
+        <attribute name="edited" value="amFyZWR3b29kcztKQVJFRFdPT0RTNkFCMTsyMDIxLTAzLTIwOzAzOjA2OjUxIFBNOzY7MzQ0NA=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="bonusPay, totalBonus, averageBonus, salary" type="Real" array="False" size=""/>
+            <declare name="count" type="Integer" array="False" size=""/>
+            <declare name="lastname" type="String" array="False" size=""/>
+            <assign variable="count" expression="0"/>
+            <assign variable="bonusPay" expression="0"/>
+            <assign variable="totalBonus" expression="0"/>
+            <input variable="lastname"/>
+            <while expression="lastname != &quot;&quot;">
+                <assign variable="count" expression="count + 1"/>
+                <output expression="&quot;EMPLOYEE LAST NAME: &quot; &amp; lastname" newline="True"/>
+                <input variable="salary"/>
+                <output expression="&quot;EMPLOYEE SALARY: $&quot; &amp; salary" newline="True"/>
+                <call expression="bonus(salary)"/>
+                <assign variable="bonusPay" expression="bonus(salary)"/>
+                <output expression="&quot;EMPLOYEE BONUS: $&quot; &amp; bonusPay" newline="True"/>
+                <assign variable="totalBonus" expression="totalBonus + bonusPay"/>
+                <input variable="lastname"/>
+            </while>
+            <assign variable="averageBonus" expression="totalBonus/count"/>
+            <output expression="&quot;AVERAGE BONUS: $&quot; &amp; averageBonus" newline="True"/>
+        </body>
+    </function>
+    <function name="bonus" type="Real" variable="bonus">
+        <parameters>
+            <parameter name="salary" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <declare name="bonus" type="Real" array="False" size=""/>
+            <assign variable="bonus" expression="salary*0.10"/>
+        </body>
+    </function>
+</flowgorithm>
